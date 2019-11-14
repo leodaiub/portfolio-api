@@ -20,7 +20,7 @@ Route.post("/register", "AuthController.register");
 Route.post("/authenticate", "AuthController.authenticate");
 
 Route.group(() => {
-  Route.resource("posts", "PostController")
+  Route.resource("posts:page?", "PostController")
     .apiOnly()
     .middleware(
       new Map([[["posts.store", "posts.update", "posts.delete"], ["auth"]]])
@@ -36,3 +36,5 @@ Route.group(() => {
       ])
     );
 });
+
+Route.post("contact", "EmailController.mail");

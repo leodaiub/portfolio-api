@@ -20,7 +20,8 @@ class PostController {
    * @param {View} ctx.view
    */
   async index({ request, response, view }) {
-    const posts = await Post.query().paginate(request.body.page || 1, 10);
+    const all = request.get();
+    const posts = await Post.query().paginate(all.page || 1, 3);
 
     return posts;
   }
