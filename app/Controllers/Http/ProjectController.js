@@ -20,7 +20,7 @@ class ProjectController {
    * @param {View} ctx.view
    */
   async index({ request, response, view }) {
-    const projects = await Project.query().fetch();
+    const projects = await Project.query().paginate(request.body.page || 1, 10);
 
     return projects;
   }
