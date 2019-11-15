@@ -25,12 +25,12 @@ module.exports = {
   smtp: {
     driver: "smtp",
     pool: true,
-    port: Env.get("SMTP_PORT", 2525),
-    host: Env.get("SMTP_HOST", "smtp.mailtrap.io"),
+    port: Env.get("SMTP_PORT", 587),
+    host: Env.get("SMTP_HOST", "smtp.gmail.com"),
     secure: false,
     auth: {
-      user: Env.get("MAIL_USERNAME", "96b38d59116c66"),
-      pass: Env.get("MAIL_PASSWORD", "94779d4d8a3675")
+      user: Env.get("MAIL_USERNAME", "leodaiub@gmail.com"),
+      pass: Env.get("MAIL_PASSWORD")
     },
     maxConnections: 5,
     maxMessages: 100,
